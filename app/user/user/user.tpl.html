@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    
+    <button ng-click="search()">Szukaj</button>
+	
+	<table id = "userList" border="1">
+      
+        <tr ng-repeat="u in user">
+            <td>{{ u.id }}</td>
+			<td>{{ u.firstName }}</td>
+			<td>{{ u.lastName }}</td>
+			<td>{{ u.email }}</td>
+			<td>{{ u.password }}</td>
+        </tr>
+    </table>
+
+
+
+</body>
+</html>
