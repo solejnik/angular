@@ -3,14 +3,14 @@ angular.module('app.register').factory('RegisterRestService', function ($http ) 
 
     return {
         register: function (registerData) {
-			var a = {
+			var userToSend = {
 				'id' : '',
-		 'firstName' : registerData.firstName,
-		 'lastName' :registerData.lastName,
-		 'email' :registerData.email,
-		 'password' :registerData.password
+				'firstName' : registerData.firstName,
+				'lastName' :registerData.lastName,
+				'email' :registerData.email,
+				'password' :registerData.password
 			};
-			return $http.post('/web/rest', a);
+			return $http.post('/web/register/', userToSend);
         }
     };
 });

@@ -13,11 +13,18 @@ angular.module('app.register').controller('RegisterController', function ($scope
 	 $scope.reEmail = '';
 	 $scope.rePassword = '';
 	 
-	 $scope.validData = $scope.reEmail==$scope.registerData.email;
+	 $scope.validEmail = function (){
+		 return $scope.registerData.email !== $scope.reEmail;
+	 }
+	 
+	 $scope.validPassword = function (){
+		 return $scope.registerData.password !== $scope.rePassword;
+	 }
 	 
      $scope.register = function () {
         RegisterRestService.register($scope.registerData).then(function (response) {
-			alert();
+			$scope.registerData = '';
+			alert('Register complete. Now You can log in');
 		}, function () {
             alert('Faiure!!!');
         });

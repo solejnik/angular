@@ -36,7 +36,7 @@
 </head>
 <body>
 
-         {{registerData || json}}
+	<div align="center">
     <form name="registerData">
 	<table>
 		<tr>
@@ -68,7 +68,8 @@
 			Re-email
 			</td>
 			<td>
-			<input type="text" same-ass="registerData.email" placeholder="re email" ng-model="reEmail" required>
+			<input type="text" placeholder="re email" ng-model="reEmail" required >
+			<span ng-show="validEmail()">Emails have to match!</span>
 			</td>
 		</tr>
 		<tr>
@@ -85,18 +86,18 @@
 			</td>
 			<td>
 			<input type="password" placeholder="re password" ng-model="rePassword" required>
+			<span ng-show="validPassword()">Passwords have to match!</span>
 			</td>
 		</tr>
 		<tr>
 			<td>
-			<button ng-disabled="registerData.$invalid" ng-click = "register()" class="btn btn-success">Rejestruj</button>
+			<button ng-disabled="registerData.$invalid || validEmail() || validPassword()" ng-click = "register()" class="btn btn-success">Rejestruj</button>
 			</td>
 			<td>
-			
 			</td>
 		</tr>
 	</table>
     </form>
-
+	</div>
 </body>
 </html>
