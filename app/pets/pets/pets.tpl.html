@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Pets</title>
+</head>
+<body>
+	<h2> Lista Twoich zwierzakow</h2>
+	<div align="center">
+	<button  ng-click = "getPets()" class="btn btn-success">Pokaz moje zwierzaki</button>
+	<br>
+	<br>
+	<table id = "petList" border="1">
+        <tr ng-repeat="pet in pets">
+            <td>{{$index + 1}}</td>
+            <td>{{ pet.name }}</td>
+            <td>{{ pet.type }}</td>
+            <td>{{ pet.bornDate }}</td>
+            <td><button  ng-click="deletePet(pet.id)" class="btn btn-danger btn-xs">Usun zwierzaka</button></td>
+            <td><button  ng-click="alertPet(pet.id)" class="btn btn-warning btn-xs">Edytuj zwierzaka</button></td>
+        </tr>
+    </table>
+	</div>
+</body>
+</html>
