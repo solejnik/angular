@@ -7,16 +7,23 @@
 	<h2> Lista Twoich zwierzakow</h2>
 	<div align="center">
 	<button  ng-click = "getPets()" class="btn btn-success">Pokaz moje zwierzaki</button>
+	<button  ng-click = "addPet()" class="btn btn-info">Dodaj zwierzaka</button>
 	<br>
 	<br>
 	<table id = "petList" border="1">
-        <tr ng-repeat="pet in pets">
+		<th>Id</th>
+		<th>Name</th>
+		<th>Type</th>
+		<th>Born date</th>
+		<th>Delete</th>
+		<th>Edit</th>
+        <tr ng-repeat="pet in pets | orderBy:'name'">
             <td>{{$index + 1}}</td>
             <td>{{ pet.name }}</td>
             <td>{{ pet.type }}</td>
-            <td>{{ pet.bornDate }}</td>
+            <td>{{ pet.bornDate | date: "MM-dd-yyyy"}}</td>
             <td><button  ng-click="deletePet(pet.id)" class="btn btn-danger btn-xs">Usun zwierzaka</button></td>
-            <td><button  ng-click="alertPet(pet.id)" class="btn btn-warning btn-xs">Edytuj zwierzaka</button></td>
+            <td><button  ng-click="editPet(pet)" class="btn btn-warning btn-xs">Edytuj zwierzaka</button></td>
         </tr>
     </table>
 	</div>

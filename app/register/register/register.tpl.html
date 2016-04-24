@@ -1,92 +1,64 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Login Page</title>
-<style>
-.error {
-    padding: 15px;
-    margin-bottom: 20px;
-    border: 1px solid transparent;
-    border-radius: 4px;
-    color: #a94442;
-    background-color: #f2dede;
-    border-color: #ebccd1;
-}
-
-.msg {
-    padding: 15px;
-    margin-bottom: 20px;
-    border: 1px solid transparent;
-    border-radius: 4px;
-    color: #31708f;
-    background-color: #d9edf7;
-    border-color: #bce8f1;
-}
-
-#login-box {
-    width: 300px;
-    padding: 20px;
-    margin: 100px auto;
-    background: #fff;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    border: 1px solid #000;
-}
-</style>
+<title>Register Page</title>
 </head>
 <body>
 
-	<div align="center">
+	<div>
+	
+	 <h2>Wypelnij ponizsze pola aby sie zarejestrowac</h2>
+	 
     <form name="registerData">
 	<table>
 		<tr>
 			<td>
-			First name
+			First name:
 			</td>
 			<td>
-			<input type="text" placeholder="fname" ng-model="registerData.firstName" required>
-			</td>
-		</tr>
-		<tr>
-			<td>
-			Last name
-			</td>
-			<td>
-			<input type="text" placeholder="lname" ng-model="registerData.lastName" required>
+			<input type="text" ng-model="registerData.firstName" required>
 			</td>
 		</tr>
 		<tr>
 			<td>
-			Email
+			Last name:
 			</td>
 			<td>
-			<input type="text" placeholder="email" ng-model="registerData.email" required>
-			</td>
-		</tr>
-		<tr>
-			<td>
-			Re-email
-			</td>
-			<td>
-			<input type="text" placeholder="re email" ng-model="reEmail" required >
-			<span ng-show="validEmail()">Emails have to match!</span>
+			<input type="text" ng-model="registerData.lastName" required>
 			</td>
 		</tr>
 		<tr>
 			<td>
-			Password
+			Email:
 			</td>
 			<td>
-			<input type="password" placeholder="password" ng-model="registerData.password" required>
+			<input type="text" ng-model="registerData.email" required>
 			</td>
 		</tr>
 		<tr>
 			<td>
-			Re-password
+			Re-email:
 			</td>
 			<td>
-			<input type="password" placeholder="re password" ng-model="rePassword" required>
-			<span ng-show="validPassword()">Passwords have to match!</span>
+			<input type="text" ng-model="reEmail" required >
+			<span ng-show="validEmail()">Emaile musza sie zgadzac!</span>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			Password:
+			</td>
+			<td>
+			<input type="password" ng-model="registerData.password" required>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			Re-password:
+			</td>
+			<td>
+			<input type="password" ng-model="rePassword" required>
+			<span ng-show="validPassword()">Hasla musza sie zgadzac!</span>
 			</td>
 		</tr>
 		<tr>
