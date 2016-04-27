@@ -12,9 +12,8 @@ angular.module('app.pets').controller('PetsController', function ($scope, PetsRe
         });
     };
 	
-	$scope.deletePet = function (petId) {
-        PetsRestService.deletePet(petId).then(function (response) {
-			alert('Zwierzak usuniety!');
+	$scope.getCurrentUsersRole = function () {
+        PetsRestService.getCurrentUsersRole().then(function (response) {
 			angular.copy(response.data, $scope.pets);
 		}, function () {
             alert('Failed to delete pet!');
